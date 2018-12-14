@@ -1,0 +1,125 @@
+#include "stdio.h"
+
+#include "stdlib.h"
+
+#include "math.h"
+
+#include "writeTree.h"
+
+#include "buildTree.h"
+
+#include "treeStructure.h"
+
+
+//1----
+// main
+
+int add=0,remove1=0;
+
+int main( int argc, char **argv ) {
+
+
+
+  Node *head;
+
+
+
+  // make the head node
+
+  head = makeNode( 0.0,0.0, 0 );
+
+
+
+  // make a tree
+
+  growTree(head);
+
+  // print the tree for Gnuplot
+
+  //destroyTree(head);
+
+  writeTree(head);
+
+
+  return 0;
+
+}
+
+//2----
+// main
+
+int add=0,remove1=0;
+
+int main( int argc, char **argv ) {
+
+
+
+  Node *head;
+
+
+
+  // make the head node
+
+  head = makeNode( 0.0,0.0, 0 );
+
+
+
+  // make a tree
+
+  /*task1
+  growTree(head);
+  growTree(head);
+
+  // print the tree for Gnuplot
+  removeChildren(head->child[0]);
+
+  writeTree( head );
+  */
+  //task2
+  growTree(head);
+  makeChildren(head->child[0]);
+  removeChildren(head->child[1]);
+  writeTree(head);
+  destroyTree(head);
+
+  return 0;
+
+}
+
+//3-----
+// main
+
+int add=0,remove1=0;
+
+int main( int argc, char **argv ) {
+
+
+
+  Node *head;
+
+
+
+  // make the head node
+
+  head = makeNode( 0.0,0.0, 0 );
+
+
+
+  // make a tree
+
+  growTree(head);
+  growTree(head);
+  growTree(head);
+  mark_nodes(head);
+  add_remove(head);
+
+  // print the tree for Gnuplot
+
+	writeTree( head );
+
+  printf("%d,%d\n",add,remove1);
+  destroyTree(head);
+
+  return 0;
+
+}
